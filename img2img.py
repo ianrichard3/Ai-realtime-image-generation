@@ -41,7 +41,7 @@ def get_parameters_from_file(defaults=["",0.77,4]):
         
     try:
         return lines[0], float(lines[1]), int(lines[2])
-    catch e:
+    except e:
         return defaults
     
 
