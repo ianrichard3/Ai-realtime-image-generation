@@ -35,13 +35,15 @@ def prepare_image(init_image_dir="temp/messi.png"):
     return init_image
 
 
-def get_parameters_from_file(defaults=["",0.7,4]):
+def get_parameters_from_file(defaults=["",0.77,4]):
     with open("parameters.txt") as f:
         lines = [l.strip() for l in f.readlines()]
-    
-    if len(lines) != 3 or "" in lines:
+        
+    try:
+        return lines[0], float(lines[1]), int(lines[2])
+    catch e:
         return defaults
-    return lines[0], float(lines[1]), int(lines[2])
+    
 
 
 
